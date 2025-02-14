@@ -1,0 +1,99 @@
+/* General styles */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #ffebee; /* Light pink background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* Container for the content */
+.container {
+  text-align: center;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative; /* Needed for absolute positioning of the "No" button */
+}
+
+/* Heading */
+h1 {
+  color: #e91e63; /* Pink color */
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+}
+
+/* Buttons container */
+.buttons {
+  margin-bottom: 20px;
+}
+
+/* Button styles */
+button {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 0 10px;
+  transition: transform 0.2s;
+}
+
+/* Yes button */
+#yesButton {
+  background-color: #4caf50; /* Green color */
+  color: white;
+}
+
+/* No button */
+#noButton {
+  background-color: #f44336; /* Red color */
+  color: white;
+  position: absolute; /* Allow the button to move around */
+  transition: left 0.3s ease, top 0.3s ease; /* Faster movement */
+}
+
+/* Button hover effect */
+button:hover {
+  transform: scale(1.1);
+}
+
+/* Image container */
+.image-container img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+/* Celebration emojis */
+.celebration {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Ensure clicks pass through */
+  z-index: 1000; /* Make sure it's on top */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.celebration span {
+  position: absolute;
+  font-size: 3rem; /* Bigger emojis */
+  animation: float 3s ease-in infinite; /* Faster animation */
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); /* Add shadow for better visibility */
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-100vh) rotate(360deg);
+    opacity: 0;
+  }
+}
